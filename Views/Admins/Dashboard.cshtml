@@ -1,0 +1,15 @@
+﻿<h3 style="color:firebrick;font-family:Calibri">Welcome  <b>@ViewBag.user</b></h3>
+
+<div style="min-height:30vh;">
+    <div class="mt-5" style="display:flex;justify-content:center;align-items:center;flex-direction:column">
+        <p>Total Number of Registered Sellers: <b>@ViewBag.s</b></p>
+        <p>Total Number of Registered Customers: <b>@ViewBag.c</b></p>
+        <p>Total Number of Laptops for sale: <b>@ViewBag.l</b></p>
+    </div>
+
+    <div class="mt-10" style="display:flex;justify-content:center;align-items:center;flex-direction:row">
+        <button style="margin:0px 10px; background:red" class="w-20 btn btn-primary btn-lg" onclick="location.href='@Url.Action("index", "sellers", new { })'"><b>View Registered sellers</b></button><br/>
+        <button style="margin: 0px 10px; background:brown" class="w-20 btn btn-primary btn-lg" onclick="location.href='@Url.Action("index", "customers", new { })'"><b>View Registered Customers</b></button> </br>
+        <button style="margin: 0px 10px; " class="w-20 btn btn-primary btn-lg" onclick="location.href='@Url.Action("index", "laptopdetails", new { })'"><b>View Products</b></button> </br>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@model phase3proj.Model.Seller
+
+@{
+    ViewData["Title"] = "SellerLogin";
+}
+
+<h1 style="color:orangered">SellerLogin</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SellerLogin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                Enter Seller UserName
+                <input asp-for="Sname" class="form-control" />
+                <span asp-validation-for="Sname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Enter Seller Password
+                <input type="password" asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@ViewBag.msg
+<a asp-controller="login" asp-action="RegisterSeller"><b>New Seller?, Register Here</b></a>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

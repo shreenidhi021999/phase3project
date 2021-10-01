@@ -1,0 +1,91 @@
+﻿
+
+@model IEnumerable<phase3proj.Model.LaptopDetails> 
+@{
+
+        ViewData["Title"] = "Index";
+}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+               rel="stylesheet"
+               integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+               crossorigin="anonymous" />     
+    <title>Product Menu</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            @foreach (var item in Model)
+
+            {
+
+<div class="card col-md-3 d-flex justify-content-around">
+
+    <div class="card-body">
+
+        <h4 class="card-title">@Html.DisplayFor(modelItem => item.ModelName)</h4>
+
+        <div style="max-height: 100px;overflow: hidden;text-overflow: ellipsis;" class="my-2">
+
+            <p class="card-text">Laptop</p>
+
+        </div>
+
+        <p><span class="fw-bold">Processor</span>: @Html.DisplayFor(modelItem => item.Processor)</p>
+
+        @*<p><span class="fw-bold">Ram</span>: @Html.DisplayFor(modelItem => item.Ram) <b>GB</b> </p>
+
+        <p><span class="fw-bold">Storage</span>: @Html.DisplayFor(modelItem => item.Storage) <b>TB</b> </p>
+
+        <p><span class="fw-bold">GraphicsCard</span>: @Html.DisplayFor(modelItem => item.GraphicsCard) </p>*@
+
+        <p><span class="fw-bold">Price</span>: @Html.DisplayFor(modelItem => item.Price)&#x20b9; </p>
+        <button class="btn btn-primary w-100" onclick="location.href='@Url.Action("Details","LaptopDetails",new {id=@item.Id})'">Details</button>
+
+        <button class="btn btn-success w-100" onclick="location.href='@Url.Action("checkout", "customerdash", new {id=@item.Id})'">Checkout Here</button>
+
+    </div>
+
+</div>
+
+}
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+                        crossorigin="anonymous"></script>
+
+    </div>
+
+</body>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+
+    <p class="mb-1">&copy; A Srinidhi's project</p>
+
+    <ul class="list-inline">
+
+        <li class="list-inline-item"><a href="#">Contact</a></li>
+
+        <li class="list-inline-item"><a href="#">Terms and Conditions</a></li>
+
+    </ul>
+
+</footer>
+
+</html>
+
